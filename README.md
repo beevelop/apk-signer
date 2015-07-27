@@ -13,10 +13,21 @@ sudo npm install -g apk-signer
 
 ## Options
 ```
+Usage: apk-signer
 
+Options:
+  --help           Show help [boolean]
+  -v, --version    Show version number [boolean]
+  -c               Path to JSON config file
+  -f, --file       (relative) path to the apk file [string] [required]
+  -a, --alias      alias_name for your application [required]
+  -k, --keystore   path to the keystore to sign your app with [required]
+  -s, --storepass  password for keystore integrity [required]
+  -p, --keypass    password for private key (if different)
+  -l, --log        File to log stdout to
 ```
 
 ## Example
 ```
-
+apk-signer -f android-release-unsigned.apk -a phoenix -k my.keystore -s ph03n!X
 ```
