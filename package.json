@@ -1,0 +1,32 @@
+{
+  "name": "apk-signer",
+  "version": "0.0.1",
+  "description": "simple cli tool to sign apks",
+  "main": "index.js",
+  "bin": "apk-signer",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beevelop/apk-signer.git"
+  },
+  "keywords": [
+    "apk",
+    "android",
+    "sign",
+    "jarsigner",
+    "zipalign"
+  ],
+  "author": "Maik Hummel <info@beevelop.com> (https://beevelop.com)",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/beevelop/apk-signer/issues"
+  },
+  "homepage": "https://github.com/beevelop/apk-signer#readme",
+  "dependencies": {
+    "child-process-promise": "^1.1.0",
+    "q-io": "^1.13.1",
+    "yargs": "^3.15.0"
+  }
+}

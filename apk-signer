@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+var apkSigner = require('./index');
+var path = require('path');
+var yargs = require('yargs');
+
+var config = yargs
+    .help('help')
+    .version('0.0.1', 'v')
+    .alias('v', 'version')
+    .showHelpOnFail(true)
+    .usage('Quickly sign or resign an APK.\nUsage: $0')
+    .config('c')
+    .options('f', {
+        alias: 'file',
+        describe: '(relative) path to the apk file',
+        type: 'string',
+        demand: true
+    })
+    .options('a', {
+        alias: 'alias',
+        describe: 'alias_name for your application',
+        demand: true
+    })
+    .options('k', {
+        alias: 'keystore',
+        describe: 'path to the keystore to sign your app with',
+        demand: true
+    })
+    .options('s', {
+        alias: 'storepass',
+        describe: 'password for keystore integrity',
+        demand: true
+    })
+    .options('p', {
+        alias: 'keypass',
+        describe: 'password for private key (if different)'
+    })
+    .options('l', {
+        alias: 'log',
+        describe: 'File to log stdout to'
+    })
+    .implies('p', 's')
+    .argv;
+
+config.name = config.file.split('.').splice(0, 1).join('').replace('-unsigned', '');
+config.file = path.resolve(config.file);
+config.keystore = path.resolve(config.keystore);
+config.keypass = config.keypass || config.storepass;
+config.log = config.log ? path.resolve(config.log) : false;
+
+apkSigner(config)
+    .then(function () {
+        console.log('Sucessfully signed '+config.name);
+        process.exit(0);
+    })
+    .catch(function (err) {
+        console.log(err);
+        process.exit(1);
+    });
