@@ -7,7 +7,7 @@
 > simple command line tool for easily signing apks
 
 ## Installation
-```
+```bash
 sudo npm install -g apk-signer
 ```
 
@@ -28,6 +28,6 @@ Options:
 ```
 
 ## Example
-```
+```bash
 apk-signer -f android-release-unsigned.apk -a phoenix -k my.keystore -s ph03n!X
 ```
