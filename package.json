@@ -27,6 +27,6 @@
   "dependencies": {
     "child-process-promise": "^2.1.0",
     "q-io": "^1.13.1",
-    "yargs": "^4.8.1"
+    "yargs": "^5.0.0"
   }
 }
