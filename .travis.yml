@@ -1,0 +1,21 @@
+language: java
+jdk:
+  - oraclejdk8
+before_install:
+  - nvm install 6
+  - nvm use 6
+install:
+  - npm i
+script:
+  - jarsigner -verify -verbose -certs android-release-unsigned.apk | grep "unsigned"
+  
+  - ./apk-signer -f test/android-release-unsigned.apk -a foobar -k test/foobar.keystore -s foobar
+  
+  - stat test/android-release-unaligned.apk
+  - stat test/android-release.apk
+  
+  - jarsigner -verify -verbose -certs test/android-release-unaligned.apk
+  - jarsigner -verify -verbose -certs test/android-release-unaligned.apk | grep -m 1 Foobar
+
+  - jarsigner -verify -verbose -certs test/android-release.apk
+  - jarsigner -verify -verbose -certs test/android-release.apk | grep -m 1 Foobar
