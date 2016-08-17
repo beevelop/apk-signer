@@ -1,6 +1,9 @@
 [![npm](https://img.shields.io/npm/v/apk-signer.svg?style=flat-square)](https://www.npmjs.com/package/apk-signer)
 [![GitHub issues](https://img.shields.io/github/issues/beevelop/apk-signer.svg?style=flat-square)](https://github.com/beevelop/apk-signer/issues)
 [![bitHound Score](https://www.bithound.io/github/beevelop/apk-signer/badges/score.svg?)](https://www.bithound.io/github/beevelop/apk-signer)
+[![Travis](https://img.shields.io/travis/beevelop/ng-stomp.svg?style=flat-square)](https://travis-ci.org/beevelop/apk-signer)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
+[![Beevelop](https://links.beevelop.com/honey-badge)](https://beevelop.com)
 
 # apk-signer
 

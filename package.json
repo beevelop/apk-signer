@@ -1,6 +1,6 @@
 {
   "name": "apk-signer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "simple cli tool to sign apks",
   "main": "index.js",
   "bin": "apk-signer",
