@@ -2,12 +2,14 @@ language: java
 jdk:
   - oraclejdk8
 before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y zipalign
   - nvm install 6
   - nvm use 6
 install:
   - npm i
 script:
-  - jarsigner -verify -verbose -certs android-release-unsigned.apk | grep "unsigned"
+  - jarsigner -verify -verbose -certs test/android-release-unsigned.apk | grep "unsigned"
   
   - ./apk-signer -f test/android-release-unsigned.apk -a foobar -k test/foobar.keystore -s foobar
   
