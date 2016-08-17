@@ -17,8 +17,9 @@ install:
   - npm i
 script:
   - jarsigner -verify -verbose -certs test/android-release-unsigned.apk | grep "unsigned"
+  - ls /usr/local/android-sdk/build-tools/
   
-  - ./apk-signer -f test/android-release-unsigned.apk -a foobar -k test/foobar.keystore -s foobar
+  - PATH=$PATH:/usr/local/android-sdk/build-tools/23.0.1/ ./apk-signer -f test/android-release-unsigned.apk -a foobar -k test/foobar.keystore -s foobar
   
   - stat test/android-release-unaligned.apk
   - stat test/android-release.apk
