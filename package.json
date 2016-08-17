@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/beevelop/apk-signer#readme",
   "dependencies": {
-    "child-process-promise": "^1.1.0",
+    "child-process-promise": "^2.0.3",
     "q-io": "^1.13.1",
-    "yargs": "^3.15.0"
+    "yargs": "^4.8.1"
   }
 }
