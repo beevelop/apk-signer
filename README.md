@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/54e768adfe954fdebacf3ace4ff2562e)](https://www.codacy.com/app/yo/apk-signer?utm_source=github.com&utm_medium=referral&utm_content=beevelop/apk-signer&utm_campaign=badger)
 [![npm](https://img.shields.io/npm/v/apk-signer.svg?style=flat-square)](https://www.npmjs.com/package/apk-signer)
 [![GitHub issues](https://img.shields.io/github/issues/beevelop/apk-signer.svg?style=flat-square)](https://github.com/beevelop/apk-signer/issues)
 [![bitHound Score](https://www.bithound.io/github/beevelop/apk-signer/badges/score.svg?)](https://www.bithound.io/github/beevelop/apk-signer)
