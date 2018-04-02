@@ -1,7 +1,7 @@
 {
   "name": "apk-signer",
   "version": "0.1.0",
-  "description": "simple cli tool to sign apks",
+  "description": "Simple command line helper to (re)sign apks",
   "main": "index.js",
   "bin": "apk-signer",
   "scripts": {
@@ -18,8 +18,8 @@
     "jarsigner",
     "zipalign"
   ],
-  "author": "Maik Hummel <info@beevelop.com> (https://beevelop.com)",
-  "license": "WTFPL",
+  "author": "Maik Hummel <hi@beevelop.com> (https://beevelop.com)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/beevelop/apk-signer/issues"
   },
