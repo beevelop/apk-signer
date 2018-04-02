@@ -40,6 +40,10 @@ var config = yargs
     alias: 'log',
     describe: 'File to log stdout to'
   })
+  .options('o', {
+      alias: 'output',
+      describe: 'Define output name for signed apk'
+  })
   .implies('p', 's')
   .argv
 
@@ -48,6 +52,7 @@ config.file = path.resolve(config.file)
 config.keystore = path.resolve(config.keystore)
 config.keypass = config.keypass || config.storepass
 config.log = config.log ? path.resolve(config.log) : false
+config.output = config.output ? path.resolve(config.output).replace('.apk','') : false
 
 apkSigner(config)
   .then(function () {
