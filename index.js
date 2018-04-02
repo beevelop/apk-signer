@@ -3,7 +3,7 @@ var path = require('path')
 var exec = require('child-process-promise').exec
 
 module.exports = function (config) {
-  var unalignedPath = config.output ? config.output+'.apk' : path.resolve(config.name + '-unaligned.apk')
+  var unalignedPath = config.output ? config.output + '.apk' : path.resolve(config.name + '-unaligned.apk')
   
   var jarsignerCmd = ['jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1']
   jarsignerCmd.push('-keystore ' + config.keystore)
