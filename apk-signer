@@ -6,7 +6,6 @@ var yargs = require('yargs')
 
 var config = yargs
   .help('help')
-  .version('0.1.0', 'v')
   .alias('v', 'version')
   .showHelpOnFail(true)
   .usage('Quickly sign or resign an APK.\nUsage: $0')
