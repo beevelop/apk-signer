@@ -11,26 +11,33 @@
 
 ## Installation
 ```bash
-sudo npm install -g apk-signer
+npm install -g apk-signer
 ```
 
 ## Options
 ```
-Usage: apk-signer
-
-Options:
-  --help           Show help [boolean]
-  -v, --version    Show version number [boolean]
-  -c               Path to JSON config file
-  -f, --file       (relative) path to the apk file [string] [required]
-  -a, --alias      alias_name for your application [required]
-  -k, --keystore   path to the keystore to sign your app with [required]
-  -s, --storepass  password for keystore integrity [required]
-  -p, --keypass    password for private key (if different)
-  -l, --log        File to log stdout to
+--help           Show help                                           [boolean]
+-c               Path to JSON config file
+-f, --file       (relative) path to the apk file           [string] [required]
+-a, --alias      alias_name for your application                    [required]
+-k, --keystore   path to the keystore to sign your app with         [required]
+-s, --storepass  password for keystore integrity                    [required]
+-p, --keypass    password for private key (if different)
+-l, --log        File to log stdout to
+-o, --output     Define output name for signed apk
+-v, --version    Show version number                                 [boolean]
 ```
 
 ## Example
 ```bash
-apk-signer -f android-release-unsigned.apk -a phoenix -k my.keystore -s ph03n!X
+apk-signer -f android-release-unsigned.apk -a foobar -k foobar.keystore -s foobar
+
+# Optionally specify the wished output filename (.apk will be appended)
+apk-signer -f android-release-unsigned.apk -a foobar -k foobar.keystore -s foobar -o foobar
+```
+
+## Development
+```sh
+# Generate a new Keystore
+keytool -genkey -v -keystore foobar.keystore -alias foobar -keyalg RSA -keysize 2048 -validity 10000
 ```
