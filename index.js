@@ -11,7 +11,7 @@ module.exports = function (config) {
   jarsignerCmd.push('-keypass ' + config.keypass)
   jarsignerCmd.push('-signedjar ' + unalignedPath)
   jarsignerCmd.push(config.file)
-  jarsignerCmd.push(config.alias)
+  jarsignerCmd.push(config.alias.replace(/'/g, "\\'"))
 
   var zipalignCmd = ['zipalign -f -v 4']
   zipalignCmd.push(unalignedPath)
