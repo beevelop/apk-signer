@@ -20,7 +20,8 @@ module.exports = function (config) {
   var log = ''
   return exec(jarsignerCmd.join(' '), {
     cwd: process.cwd(),
-    env: process.env
+    env: process.env,
+    maxBuffer: 1024 * 500
   })
     .then(function (res) {
       if (res.stderr.length > 0) throw stderr
@@ -33,7 +34,8 @@ module.exports = function (config) {
     .then(function () {
       return exec(zipalignCmd.join(' '), {
         cwd: process.cwd(),
-        env: process.env
+        env: process.env,
+        maxBuffer: 1024 * 500
       })
     })
     .then(function (res) {
